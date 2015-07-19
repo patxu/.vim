@@ -5,6 +5,9 @@ filetype indent plugin on
 syntax on
 set nocompatible
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 map <C-n> :NERDTreeToggle<CR>
 set wmh=0
 set winheight=999
@@ -33,6 +36,10 @@ au Filetype python setl ts=2 sw=2
 
 "to remap F12 to bring us past brackets or parentheses so we can close the line
 inoremap <F12> <ESC>%%a
+
+"use the closetag plugin only when opening html/xml-like files
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/vim-closetag/plugin/closetag.vim
 
 "for iTerm2 on OSX
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
