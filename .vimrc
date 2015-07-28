@@ -32,6 +32,14 @@ set ruler
 set history=500
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
+"splits
+set splitbelow
+set splitright
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 au Filetype python setl ts=2 sw=2 
 
 "to remap F12 to bring us past brackets or parentheses so we can close the line
