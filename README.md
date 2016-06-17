@@ -1,6 +1,6 @@
 # My Vim Setup
-## clone with: "git clone --recursive https://github.com/patxu/.vim.git"
-## update with "git submodule update --init --recursive"
+
+add to `workspace_settings/` with "git submodule update --init --recursive"
 
 Uses pathogen to easily add and remove addons. These addons are found in /bundle.
 
