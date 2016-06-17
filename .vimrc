@@ -61,4 +61,4 @@ let g:solarized_termcolors=256
 se t_Co=16
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
-colorscheme solarized
+"colorscheme solarized
