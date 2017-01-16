@@ -6,7 +6,7 @@ filetype plugin on
 set nocompatible
 
 "to set the color scheme
-set background=dark 
+set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 
@@ -50,7 +50,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-au Filetype python setl ts=2 sw=2 
+au Filetype python setl ts=2 sw=2
 
 "to remap F12 to bring us past brackets or parentheses so we can close the line
 inoremap <F12> <ESC>%%a
