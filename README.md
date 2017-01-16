@@ -1,6 +1,6 @@
 # My Vim Setup
 
-add to `workspace_settings/` with "git submodule update --init --recursive"
+add to `dotfiles/` with "git submodule update --init --recursive"
 
 Uses pathogen to easily add and remove addons. These addons are found in /bundle.
 
