@@ -5,9 +5,22 @@ syntax enable
 filetype plugin on
 set nocompatible
 
+"nerdtree
+filetype plugin indent on
+" string some conditional commands together, otherwise one may force open
+" NERDTree when we don't want it to
+" Don't show for gitcommit
+" wincmd p " put focus back to the previous window
+autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p| endif 
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
+"sql
+au BufRead /tmp/psql.edit.* set syntax=sql
+
 "to set the color scheme
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 let g:solarized_termcolors=256
 
 "vim latex
@@ -16,7 +29,6 @@ let g:solarized_termcolors=256
 "let g:tex_flavor='latex'
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 map <C-n> :NERDTreeToggle<CR>
 set wmh=0
